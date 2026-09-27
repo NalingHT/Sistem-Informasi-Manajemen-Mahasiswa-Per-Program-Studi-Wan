@@ -1,0 +1,68 @@
+============================================================
+ SIM MAHASISWA - VERSI 1 FILE (index.php)
+ Database baru: if0_42301805_simmhs
+============================================================
+
+Yang diunggah ke hosting HANYA SATU FILE: index.php
+Tabel database dibuat otomatis saat website pertama kali dibuka.
+(Tidak perlu install.php, tidak perlu folder config/includes.)
+
+------------------------------------------------------------
+LANGKAH 1 - Buat database baru
+------------------------------------------------------------
+1. Client Area InfinityFree > akun Anda > MySQL Databases.
+2. Di kolom nama database ketik:   simmhs
+   lalu klik Create Database.
+3. Hasilnya bernama:   if0_42301805_simmhs
+   Di halaman yang sama, catat "MySQL Password"
+   (password akun hosting, BUKAN password login Client Area).
+
+------------------------------------------------------------
+LANGKAH 2 - Isi password di index.php
+------------------------------------------------------------
+Buka index.php dengan Notepad, cari baris 15:
+
+    $DB_PASS = 'ISI_PASSWORD_HOSTING_ANDA';
+
+ganti menjadi password Anda (tetap di dalam tanda kutip), contoh:
+
+    $DB_PASS = 'AbCd1234xyz';
+
+Simpan. Baris 12-14 (host, nama database, username) sudah benar.
+
+------------------------------------------------------------
+LANGKAH 3 - Bersihkan htdocs lalu unggah
+------------------------------------------------------------
+1. File Manager > folder htdocs.
+2. HAPUS SEMUA isi htdocs yang lama (index.php, install.php,
+   dashboard.php, proses_login.php, logout.php, cek_db.php,
+   folder config, includes, assets, database).
+3. Upload file index.php yang sudah diisi password.
+   Hasil akhirnya htdocs hanya berisi:  index.php
+
+------------------------------------------------------------
+LANGKAH 4 - Buka dan login
+------------------------------------------------------------
+1. Buka https://semancticporgramstudiwan.infy.click
+   Saat pertama dibuka, 6 tabel + data contoh dibuat otomatis.
+   Angka Mahasiswa 5, Program Studi 1, Fakultas 1 akan muncul.
+2. Login:
+      NPM      : 22010001
+      Password : password123
+
+------------------------------------------------------------
+JIKA MUNCUL KOTAK MERAH "Database belum terhubung"
+------------------------------------------------------------
+Kotak itu menulis penyebabnya dan pesan asli dari MySQL, misalnya:
+ - "Password database belum diisi"  -> Langkah 2 belum dilakukan.
+ - "Username atau password salah"   -> password di baris 15 keliru.
+ - "Nama database salah"            -> nama di baris 13 tidak sama
+                                       dengan di MySQL Databases.
+Perbaiki index.php, unggah ulang, lalu muat ulang halaman.
+
+------------------------------------------------------------
+FILE if0_42301805_simmhs.sql
+------------------------------------------------------------
+OPSIONAL. Tidak wajib diimpor karena index.php sudah membuat tabel
+sendiri. Gunakan untuk lampiran tugas (dump SQL hasil 3NF) atau
+jika ingin mengisi database lewat phpMyAdmin > Import.
